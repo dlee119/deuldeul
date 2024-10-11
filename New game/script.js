@@ -156,3 +156,23 @@ function upgradeAxe() {
 
 // 초기 이미지 설정
 document.getElementById('character').src = CHARACTER_IMAGE_URL;
+
+
+window.addEventListener('hashchange', function() {
+    const hash = location.hash.replace('#', '');
+    if (hash === 'newGame') {
+        // 새 게임 시작 코드 실행
+    } else if (hash === 'continueGame') {
+        // 이어하기 코드 실행
+    } else if (hash === 'quitGame') {
+        // 게임 종료 코드 실행
+    }
+});
+
+// 페이지 로딩 시 초기 설정
+window.addEventListener('load', function() {
+    if (location.hash === '') {
+        location.hash = '#newGame';
+    }
+});
+
